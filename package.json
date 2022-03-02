@@ -1,0 +1,13 @@
+{
+  "name": "schooltype",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rafaela",
+  "license": "MIT",
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.10",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
+    "sequelize-cli": "^6.4.1"
+  }
+}
