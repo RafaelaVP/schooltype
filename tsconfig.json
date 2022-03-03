@@ -16,7 +16,9 @@
                                             
     "skipLibCheck": true,
     "outDir": "./build/src",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "target": "es2019",
+    "strictPropertyInitialization": false
                                      
  },
  "include": [
