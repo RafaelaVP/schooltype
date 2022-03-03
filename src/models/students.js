@@ -12,6 +12,11 @@ module.exports = function(sequelize, DataTypes) {
       type: Sequelize.STRING,
       allowNull:false
   },
+  state: {
+    type: Sequelize.STRING,
+    allowNull:false
+ },
+
   }, {tableName: 'students'})
 
 
