@@ -2,16 +2,15 @@ import { Query, Resolver } from 'type-graphql';
 
 @Resolver()
 export class AResolver {
-    @Query ( {
+    @Query (() => String, {
         description: "retorna hello world",
     
     }
     )
-    function helloWorld () {
+   helloWorld () {
         return "Hello world!"
     }
     
-
 }
 
 
