@@ -19,5 +19,5 @@ module.exports = function(sequelize, DataTypes) {
   }, {tableName: 'teachers'})
 
 
-return Student;
+return Teacher;
 }
