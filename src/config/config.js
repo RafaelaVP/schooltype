@@ -2,9 +2,9 @@ module.exports =
 {
   "development": {
     "username": "root",
-    "password": "123456",
+    "password": "password",
     "database": "schooltype",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
