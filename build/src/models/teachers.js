@@ -1,7 +1,7 @@
 "use strict";
-var Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 module.exports = function (sequelize, DataTypes) {
-    var Teacher = sequelize.define('teacher', {
+    const Teacher = sequelize.define('teacher', {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
@@ -17,5 +17,13 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         }
     }, { tableName: 'teachers' });
-    return Student;
+    Teacher.associate = function (models) {
+        Teacher.belongsToMany(models.student, {
+            through: 'studentteacher',
+            foreignKey: 'teacherId',
+            as: 'students',
+            constraint: true
+        });
+    };
+    return Teacher;
 };

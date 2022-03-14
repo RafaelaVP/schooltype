@@ -1,7 +1,7 @@
 "use strict";
-var Sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 module.exports = function (sequelize, DataTypes) {
-    var Student = sequelize.define('student', {
+    const Student = sequelize.define('student', {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
@@ -11,7 +11,25 @@ module.exports = function (sequelize, DataTypes) {
         nameStudent: {
             type: Sequelize.STRING,
             allowNull: false
+        },
+        state: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        bithday: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
     }, { tableName: 'students' });
+    Student.associate = function (models) {
+        Student.belongsToMany(models.teacher, {
+            through: {
+                model: models.studentteacher
+            },
+            foreignKey: 'studentId',
+            as: 'teachers',
+            constraint: true
+        });
+    };
     return Student;
 };
