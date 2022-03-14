@@ -4,10 +4,11 @@ import {AResolver} from './graphql/resolvers'
 import {buildSchemaSync} from 'type-graphql'
 import { Student } from "./graphql/students/StudentResolver";
 import { Context } from "./graphql/common/Context";
+import { Teacher } from "./graphql/teachers/TeacherResolver";
 
 
 const schema = buildSchemaSync({
-    resolvers:[AResolver, Student]
+    resolvers:[AResolver, Student, Teacher]
 }) 
 
 

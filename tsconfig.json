@@ -18,8 +18,7 @@
     "outDir": "./build/src",
     "resolveJsonModule": true,
     "target": "es2019",
-    "strictPropertyInitialization": false
-                                     
+    "strictPropertyInitialization": false                                   
  },
  "include": [
    "src/**/*"
