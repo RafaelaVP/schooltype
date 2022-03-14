@@ -16,9 +16,25 @@ module.exports = function(sequelize, DataTypes) {
     type: Sequelize.STRING,
     allowNull:false
  },
+ bithday: {
+   type: Sequelize.STRING,
+   allowNull:false
+ }
 
   }, {tableName: 'students'})
 
-
-return Student;
+  Student.associate = function(models) {
+  Student.belongsToMany(models.teacher, {
+    through: {
+     model: models.studentteacher
+    },
+    foreignKey: 'studentId',
+    as: 'teachers',
+   constraint: true
+  }) 
+} 
+  return Student; 
 }
+
+
+
